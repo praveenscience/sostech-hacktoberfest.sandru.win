@@ -15,7 +15,7 @@ $(function () {
       var Email = $("#email").val().trim();
       var Phone = $("#number").val().trim();
       var Type = $("#type").val().trim();
-      window.location.href = CertMap[Type] + GenerateCode(Email, Phone) + ".png";
+      window.location.href = CertMap[Type] + GenerateCode(Email, Phone) + "-claim.html";
     });
   });
   $("#verify").submit(function (e) {
@@ -24,7 +24,7 @@ $(function () {
     $.post("https://apps.praveen.science/sandru/", $(this).serialize(), function (res) {
       var Type = $("#vertype").val().trim();
       var CertID = $("#certid").val().trim();
-      window.location.href = CertMap[Type] + CertID + ".png";
+      window.location.href = CertMap[Type] + CertID + "-verify.html";
     });
   });
 });
